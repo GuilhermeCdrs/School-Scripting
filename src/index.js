@@ -12,14 +12,17 @@ export default function Map() {
   return (
     <Container>
       {
-        true ? <MapView
-          style={{ flex: 1 }}
-        /> : <></>
+        false ?
+          <>
+            <MapView
+              style={{ flex: 1 }}
+            />
+            <QRCodeScanner
+              onRead={() => { }}
+              // flashMode={RNCamera.Constants.FlashMode.torch}
+            />
+          </> : <></>
       }
-      <QRCodeScanner
-        onRead={() => { }}
-      //flashMode={RNCamera.Constants.FlashMode.torch}
-      />
 
     </Container>
   )
